@@ -24,9 +24,9 @@ const _axios = axios.create(config)
 _axios.interceptors.request.use(
     function(config) {
         // Do something before request is sent
-        if (process.env.NODE_ENV === 'development') {
-            console.log(config)
-        }
+        // if (process.env.NODE_ENV === 'development') {
+        //     console.log(config)
+        // }
         return config
     },
     function(error) {
@@ -39,9 +39,9 @@ _axios.interceptors.request.use(
 _axios.interceptors.response.use(
     function(response) {
         // Do something with response data
-        if (process.env.NODE_ENV === 'development') {
-            console.log(response)
-        }
+        // if (process.env.NODE_ENV === 'development') {
+        //     console.log(response)
+        // }
         return response.data
     },
     function(error) {

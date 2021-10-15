@@ -1,6 +1,6 @@
 <template>
     <v-app>
-        <v-content>
+        <v-main>
             <v-container fluid fill-height>
                 <v-layout class="align-center justify-center">
                     <v-flex xs12 sm8 md6 lg5 xl3>
@@ -34,7 +34,7 @@
                     </v-flex>
                 </v-layout>
             </v-container>
-        </v-content>
+        </v-main>
         <v-snackbar top :color="snackbar.color" v-model="snackbar.show">
             {{ snackbar.text }}
             <v-btn text @click="snackbar.show = false">Close</v-btn>
@@ -43,6 +43,8 @@
 </template>
 
 <script>
+import { initRouterRoles } from '../router/permission'
+
 export default {
     name: 'Login',
     data: () => ({
@@ -63,25 +65,35 @@ export default {
     }),
     methods: {
         userLogin() {
-            const _this = this
-            if (!_this.$refs.login_form.validate()) return
+            if (!this.$refs.login_form.validate()) return
             // 表单验证成功
-            _this.loginLoading = true
-            _this.$store
-                .dispatch('user/LOGIN', _this.loginForm)
+            this.loginLoading = true
+            this.$store
+                .dispatch('user/LOGIN', this.loginForm)
                 .then(res => {
                     if (res.code === 200) {
-                        _this.loginLoading = false
-                        _this.$router.replace('/')
+                        this.loginLoading = false
+                        this.goDashboard()
                     } else {
-                        console.error(res) // _this.snackbarShow(res.msg);
+                        // console.error(res)
+                        this.snackbarShow(res?.msg || '登陆异常')
                     }
                 })
                 .catch(({ msg }) => {
-                    _this.snackbarShow(msg, 'error')
+                    this.snackbarShow(msg, 'error')
                 })
                 .finally(() => {
-                    _this.loginLoading = false
+                    this.loginLoading = false
+                })
+        },
+        goDashboard() {
+            // 获取角色信息并打开主界面
+            initRouterRoles()
+                .then(() => {
+                    this.$router.replace('/')
+                })
+                .catch(() => {
+                    this.snackbarShow('认证失败，请重新登陆', 'error')
                 })
         },
         snackbarShow(text, color) {
@@ -94,5 +106,3 @@ export default {
     }
 }
 </script>
-
-<style scoped></style>

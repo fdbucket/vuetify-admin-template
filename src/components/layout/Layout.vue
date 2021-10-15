@@ -5,14 +5,14 @@
         <!-- 侧边导航栏 -->
         <navigation-bar />
         <!--  内容区  -->
-        <v-content>
+        <v-main>
             <breadcrumbs />
             <v-container fluid>
                 <v-scroll-x-transition mode="out-in">
                     <keep-alive> <router-view /></keep-alive>
                 </v-scroll-x-transition>
             </v-container>
-        </v-content>
+        </v-main>
     </v-app>
 </template>
 

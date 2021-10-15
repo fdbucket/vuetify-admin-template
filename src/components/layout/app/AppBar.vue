@@ -5,6 +5,7 @@
         </v-app-bar-nav-icon>
         <v-toolbar-title class="ml-0 pl-4">
             <span class="hidden-xs-only">Vuetify-Admin-Template</span>
+            <!-- <span class="hidden-xs-only">{{ $route.meta.title }}</span> -->
         </v-toolbar-title>
         <v-spacer />
 
@@ -47,6 +48,7 @@ export default {
             this.$store.dispatch('user/FONT_LOGOUT').then(() => {
                 // 刷新路由
                 history.go('/login')
+                // this.$router.replace('/login')
             })
         }
     },
@@ -56,5 +58,3 @@ export default {
     }
 }
 </script>
-
-<style scoped></style>

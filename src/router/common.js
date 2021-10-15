@@ -5,12 +5,14 @@ export default [
         path: '/login',
         name: 'Login',
         hideInMenu: true,
+        meta: { title: 'Login' },
         component: () => import(/* webpackChunkName: "Login" */ '@/views/Login')
     },
     {
         path: '/404',
         name: 'NotFound',
         hideInMenu: true,
+        meta: { title: 'Login' },
         component: () => import(/* webpackChunkName: "NotFound" */ '@/views/NotFound')
     },
     {
