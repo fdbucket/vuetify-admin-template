@@ -1,7 +1,7 @@
-import "../plugins/axios";
+import '../plugins/axios'
 
 // eslint-disable-next-line no-unused-vars,no-undef
-const _axios = axios;
+const _axios = axios
 
 /**
  * 用户登录
@@ -9,7 +9,7 @@ const _axios = axios;
  * @returns {*}
  */
 export function login(data) {
-  return _axios.post("/user/login", data);
+    return _axios.post('/user/login', data)
 }
 
 /**
@@ -17,5 +17,5 @@ export function login(data) {
  * @returns {*}
  */
 export function getUserInfo() {
-  return _axios.get("/user/info");
+    return _axios.get('/user/info')
 }

@@ -5,5 +5,5 @@
  * 父组件无角色属性会验证子组件
  */
 
-import template from "./template";
-export default [...template];
+import template from './template'
+export default [...template]
