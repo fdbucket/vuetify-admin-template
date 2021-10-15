@@ -3,16 +3,22 @@
 # 确保脚本抛出遇到的错误
 set -e
 
+# for Github Pages: /vuetify-admin-template/
 # 生成静态文件
-yarn build
+BUILD_ROOT_URL=/vuetify-admin-template/ && npm run build
 
-# 进入生成的文件夹
-cd dist
+# 切换分支到gh-pages
+git checkout gh-pages
+
+# 清理旧文件
+rm -fr docs
+
+# 新文件
+mv dist docs
 
 # 如果是发布到自定义域名
 # echo 'www.example.com' > CNAME
 
-git init
 git add -A
 git commit -m 'deploy'
 
@@ -20,6 +26,4 @@ git commit -m 'deploy'
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:dingjinyang/vuetify-admin-template.git master:gh-pages
-
-cd -
+git push -f git@github.com:fdbucket/vuetify-admin-template.git master:gh-pages
