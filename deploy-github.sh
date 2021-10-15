@@ -5,7 +5,7 @@ set -e
 
 # for Github Pages: /vuetify-admin-template/
 # 生成静态文件
-BUILD_ROOT_URL=/vuetify-admin-template/ && npm run build
+BUILD_ROOT_URL=/vuetify-admin-template/ npm run build
 
 # 切换分支到gh-pages
 git checkout gh-pages
