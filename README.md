@@ -7,6 +7,8 @@
 
 项目基于 vue@2.6.10，vue-router@3.1.3，vuex@3.1.2，@vue/cli 4.1.2 构建
 
+在线预览：[https://fdbucket.github.io/vuetify-admin-template](https://fdbucket.github.io/vuetify-admin-template/)
+
 ## 为什么选用 Vuetify
 
 1. Vuetify 基于 [Material Design](https://material.io/guidelines/)设计，个人感觉比较好看
