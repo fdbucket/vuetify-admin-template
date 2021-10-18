@@ -3,7 +3,7 @@
 # 确保脚本抛出遇到的错误
 set -e
 
-# for Github Pages: /vuetify-admin-template/
+# Github 跟路径: /vuetify-admin-template/
 # 生成静态文件
 BUILD_ROOT_URL=/vuetify-admin-template/ npm run build
 
@@ -26,4 +26,4 @@ git commit -m 'deploy'
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:fdbucket/vuetify-admin-template.git master:gh-pages
+git push -f git@github.com:fdbucket/vuetify-admin-template.git gh-pages:gh-pages
