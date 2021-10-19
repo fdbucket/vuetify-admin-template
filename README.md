@@ -7,7 +7,7 @@
 
 项目基于 vue@2.6.10，vue-router@3.1.3，vuex@3.1.2，@vue/cli 4.1.2 构建
 
-在线预览：[https://fdbucket.github.io/vuetify-admin-template](https://fdbucket.github.io/vuetify-admin-template/)
+在线预览：[https://doudoudzj.github.io/vuetify-admin-template](https://doudoudzj.github.io/vuetify-admin-template/)
 
 ## 为什么选用 Vuetify
 
